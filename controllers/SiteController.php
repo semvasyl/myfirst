@@ -93,4 +93,13 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionSayName($message='')
+    {
+        $show_msg="Вітаю";
+        if (!empty($message)) {
+            $show_msg=$show_msg.', '.$message;
+        }
+        return $this->render('SayName',['message'=>$show_msg]);
+    }
 }
